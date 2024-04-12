@@ -1,0 +1,93 @@
+{
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier",
+    "react",
+    "jsx-a11y",
+    "jest"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "globals": {
+    "$": true,
+    "jQuery": true,
+    "document": true
+  },
+  "parser": "@babel/eslint-parser",
+  // "parser": "babel-eslint",
+  "rules": {
+    "import/no-unresolved": "off",
+    "react/require-default-props": "off",
+    "prettier/prettier": ["error"],
+    "class-methods-use-this": "off",
+    "no-fallthrough": [
+      "error",
+      {
+        "commentPattern": "break[\\s\\w]*omitted"
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreComments": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-bitwise": [
+      "error",
+      {
+        "allow": ["~"]
+      }
+    ],
+    "no-use-before-define": [0, { "functions": true, "classes": true }],
+    "no-param-reassign": ["error", { "props": false }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.*",
+          "test/javascript/**/*",
+          "config/**/*.*"
+        ],
+        "peerDependencies": true
+      }
+    ],
+    "no-alert": "off",
+    "no-console": "off",
+    "no-debugger": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./vendor"],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  }
+}
